@@ -1,0 +1,2 @@
+APP_NAME = "AIOS"
+APP_VERSION = "0.1.0"
