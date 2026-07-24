@@ -1,5 +1,5 @@
 import streamlit as st
-
+from llm.ollama_client import generate_response
 
 def render_chat():
 
@@ -32,10 +32,8 @@ def render_chat():
             st.markdown(prompt)
 
         # Placeholder response
-        response = (
-            "⚡ AI model is not connected yet.\n\n"
-            "In the next phase we'll connect Ollama."
-        )
+        with st.spinner("Thinking..."):
+          response = generate_response(prompt)
 
         st.session_state.messages.append(
             {
